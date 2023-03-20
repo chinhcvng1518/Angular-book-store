@@ -1,0 +1,46 @@
+<div *ngIf="book.id" class="container">
+  <img [src]="book.imageUrl" [alt]="book.name"/>
+
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{book.name}}
+      </span>
+    </div>
+    <div class="rating">
+      <star-rating
+      [value]="book.stars"
+      [totalstars]="5"
+      checkedcolor="red"
+      uncheckedcolor="black"
+      size="25px"
+      [readonly]="true">
+    </star-rating>
+    </div>
+    <div class="origins">
+      <span>
+        {{book.desc}}
+      </span>
+    </div>
+    <div class="tags">
+      <a *ngFor="let tag of book.tags" routerLink="/tag/{{tag}}">
+        {{tag}}
+      </a>
+    </div>
+
+    <div class="cook-time">
+      <span>
+        Publication date: <strong>{{book.date}}</strong>
+      </span>
+    </div>
+
+    <div class="price">
+      <span>
+        {{book.price | currency}}
+      </span>
+    </div>
+
+    <button (click)="addToCart()">Add To Cart</button>
+
+  </div>
+</div>

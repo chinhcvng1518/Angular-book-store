@@ -1,0 +1,22 @@
+<app-search></app-search>
+<ul>
+  <li *ngFor="let book of books">
+    <a routerLink="/book/{{book.id}}">
+      <img [src]="book.imageUrl" alt="book.name"/>
+      <div class="content">
+        <div class="name">
+            {{book.name}}
+        </div>
+        <div class="stars">
+          <star-rating [value]="book.stars" [totalstars]="5" checkedcolor="red" uncheckedcolor="black" size="22px"
+            [readonly]="true">
+          </star-rating>
+          <span>
+            {{book.price | currency}}
+          </span>
+        </div>
+      </div>
+
+    </a>
+  </li>
+</ul>

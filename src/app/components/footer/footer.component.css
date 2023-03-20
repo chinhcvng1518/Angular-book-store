@@ -1,0 +1,6 @@
+.footer__bottom-layer--item {
+  background-color: #e72929;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
